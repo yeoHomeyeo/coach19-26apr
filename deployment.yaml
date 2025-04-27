@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chrisy-echo-app
+  namespace: chrisy-eks-activity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo-app
+  template:
+    metadata:
+      labels:
+        app: echo-app
+    spec:
+      containers:
+      - name: echo-container
+        image: hashicorp/http-echo
+        args:
+          - "-text=Hello, Yummy Gummy!"
+        ports:
+        - containerPort: 5678

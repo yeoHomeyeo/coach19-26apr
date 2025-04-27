@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: chrisy-echo-app-ingress
+  namespace: chrisy-eks-activity
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" #appended
+    external-dns.alpha.kubernetes.io/hostname: "chrisy-echoapp.sctp-sandbox.com" # Route53 Record
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - "chrisy-echoapp.sctp-sandbox.com" # Route53 Record
+      secretName: chrisy-tls
+  rules:
+  - host: "chrisy-echoapp.sctp-sandbox.com" # Route53 Record
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: chrisy-echo-service
+            port:
+              number: 80
