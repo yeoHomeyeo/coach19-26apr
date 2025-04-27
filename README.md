@@ -8,13 +8,13 @@
  ![](step2-create-namespace.png)  
 
 - Step 3: Sample Deployment & Service	2  
-![](step3-apply-deployment-and-service-yaml.png)  
+  ![](step3-apply-deployment-and-service-yaml.png)  
 
-![](step3-validate-describe-deployment.png)  
+  ![](step3-validate-describe-deployment.png)  
 
-![](step3-verify-service-and-pod-running.png)  
+  ![](step3-verify-service-and-pod-running.png)  
 
-![](step3-split-screen-test-forwarding-service.png)  
+  ![](step3-split-screen-test-forwarding-service.png)  
 
 - Step 4 (Optional): Testing your service using Netshoot
 
@@ -34,15 +34,15 @@ spec:
 ```
   
 - Step 4: Creating a Ingress Resource with ExternalDNS & Nginx Controller  
-![](step4-validate-netshoot.png)
+  ![](step4-validate-netshoot.png)
 - Step 5: Verify record creation in Route53  
-![](step5-apply-get-validate-ingress-resource.png)  
+  ![](step5-apply-get-validate-ingress-resource.png)  
 
-![](step5-describe-ingress.png)  
+  ![](step5-describe-ingress.png)  
 
 - Step 6: Enable LetsEncrypt TLS cert on your Ingress  
 
-![](step6-curl-http-ok-test-service-in-route53.png)
+  ![](step6-curl-http-ok-test-service-in-route53.png)
 
 ```
 apiVersion: networking.k8s.io/v1
@@ -75,12 +75,12 @@ spec:
   
 - Step 7: Curl your HTTPS endpoint  
 
-![](step7-createTLScert-check.png)
+  ![](step7-createTLScert-check.png)
 
-![](step7-view-TLS-Key-part1.png)
+  ![](step7-view-TLS-Key-part1.png)
 
-![](step7-view-TLS-Key-part2.png)
+  ![](step7-view-TLS-Key-part2.png)
 
-![](step7-view-TLS-Key-part3.png)
+  ![](step7-view-TLS-Key-part3.png)
 
-![](step7-view-TLScert-and-secret.png)
+  ![](step7-view-TLScert-and-secret.png)
